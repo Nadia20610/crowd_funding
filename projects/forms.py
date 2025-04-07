@@ -1,6 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from .models import Project, Comment, Rating , ProjectImage , Report
+from .models import Project, ProjectComment, ProjectRating, ProjectReport , ProjectPicture
 from django.utils import timezone
 
 class ProjectForm(forms.ModelForm):
@@ -27,20 +27,20 @@ class ProjectForm(forms.ModelForm):
 
 class ProjectPictureForm(forms.ModelForm):
     class Meta:
-        model = ProjectImage
+        model = ProjectPicture
         fields = ['image', 'is_featured']
 
 class ProjectCommentForm(forms.ModelForm):
     class Meta:
-        model = Comment
+        model = ProjectComment
         fields = ['content']
 
 class ProjectRatingForm(forms.ModelForm):
     class Meta:
-        model = Rating
+        model = ProjectRating
         fields = ['rating']
 
 class ProjectReportForm(forms.ModelForm):
     class Meta:
-        model = Report
+        model = ProjectReport
         fields = ['reason']
