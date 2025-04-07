@@ -34,7 +34,7 @@ class ProjectImage(models.Model):
     def __str__(self):
         return f"Image for {self.project.title}"
     
-
+############# Comments, Ratings, Reports #############
 class Comment(models.Models):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
@@ -62,6 +62,7 @@ class Report(models.Model):
     def __str__(self):
         return f"Report by {self.user.username} on {self.project.title if self.project else 'Comment'}"
     
+########### donations #############
 class Donation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='donations')
