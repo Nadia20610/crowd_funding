@@ -1,0 +1,17 @@
+<!-- projects/templates/projects/project_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects</title>
+</head>
+<body>
+    <h1>Projects</h1>
+    <ul>
+        {% for project in object_list %}
+            <li>{{ project.title }}</li>
+        {% empty %}
+            <li>No projects found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
